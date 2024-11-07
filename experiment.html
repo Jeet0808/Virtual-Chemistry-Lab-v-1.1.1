@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiments</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: beige;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #000000;
+        }
+        .experiment {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            background-color: #fff;
+        }
+        .experiment h2 {
+            color: #333;
+        }
+        .calculator {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #eef;
+            border-radius: 5px;
+        }
+        .calculator label, .calculator input {
+            display: block;
+            margin: 5px 0;
+        }
+        .calculator input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        .calculator button {
+            background-color: #000000;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+        h2{
+            margin-top: 30px;
+            text-align: center;
+            color: #05856c;
+        }
+    </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+    
+        h3 {
+            text-align: center;
+            color: #12327e;
+        }
+    
+        #hardnessForm {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            background-color: #fff;
+        }
+    
+        #hardnessForm h3 {
+            color: #333;
+        }
+    
+        .calculator {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #eef;
+            border-radius: 5px;
+        }
+    
+        #hardnessForm label, .calculator input {
+            display: block;
+            margin: 5px 0;
+        }
+    
+        #hardnessForm input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    
+        #hardnessForm button {
+            background-color: #000000;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        .result {
+            margin-top: 10px;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+    
+    
+    
+</head>
+<body>
+    <h1>Experiments</h1>
+
+    <!-- Experiment: Total Hardness of Water Sample -->
+    <div class="experiment">
+        <h2>Experiment: To Determine Total Hardness of Water Sample in PPM</h2>
+        <p><strong>Objective:</strong> To determine the total hardness of a water sample in parts per million (ppm) using EDTA as a titrant.</p>
+        <p><strong>Description:</strong> In this experiment, the hardness of a water sample is determined by titrating it with a standard EDTA solution. The total hardness is caused by dissolved calcium and magnesium ions, and the amount of EDTA used helps calculate the hardness in ppm.</p>
+
+        <h3>Apparatus Required:</h3>
+        <ul>
+            <li>Burette</li>
+            <li>Pipette</li>
+            <li>Beaker</li>
+            <li>Conical Flask</li>
+            <li>Water Sample</li>
+            <li>EDTA Solution (Titrant)</li>
+            <li>Indicator (e.g., Eriochrome Black T)</li>
+            <li>Standard Solution of Calcium Carbonate</li>
+        </ul>
+
+        <h3>Procedure:</h3>
+        <ul>
+            <li>Take a known volume of the water sample (e.g., 50 mL) in a conical flask.</li>
+            <li>Add a few drops of Eriochrome Black T indicator to the flask.</li>
+            <li>Fill the burette with the EDTA solution of known concentration.</li>
+            <li>Titrate the sample by slowly adding the EDTA solution until the color changes from red to blue.</li>
+            <li>Note the volume of EDTA used to reach the endpoint.</li>
+            <li>Repeat the titration process to obtain an average volume of EDTA used.</li>
+        </ul>
+
+        <h3>Calculation:</h3>
+        <p>The total hardness in ppm is calculated using the formula:</p>
+        <pre>
+            Hardness (ppm) = (Volume of EDTA used x Concentration of EDTA x 1000) / Volume of Water Sample
+        </pre>
+
+        <!-- Calculation Form -->
+        <h3>Enter the values for calculation:</h3>
+        <form class="calculator">
+            <label for="edtaVolume">Volume of EDTA used (mL):</label>
+            <input type="number" id="edtaVolume" required>
+            <br><br>
+
+            <label for="edtaConcentration">Concentration of EDTA (mol/L):</label>
+            <input type="number" id="edtaConcentration" step="any" required>
+            <br><br>
+
+            <label for="waterSampleVolume">Volume of Water Sample (mL):</label>
+            <input type="number" id="waterSampleVolume" required>
+            <br><br>
+
+            <button type="button" onclick="calculateHardness()">Calculate Hardness (ppm)</button>
+        </form>
+
+        <h3>Total Hardness of Water Sample:</h3>
+        <p id="result"></p>
+    </div>
+
+    <!-- Some basic experiments -->
+    <h2>Some basic experiments</h2>
+
+    <!-- Experiment 1 -->
+    <div class="experiment">
+        <h2>Experiment 1: Density Calculation</h2>
+        <p><strong>Objective:</strong> Calculate the density of an object using mass and volume.</p>
+        <div class="calculator">
+            <h3>Calculate Density</h3>
+            <label for="mass">Enter Mass (g):</label>
+            <input type="number" id="mass" step="0.1">
+            <label for="volume">Enter Volume (cm³):</label>
+            <input type="number" id="volume" step="0.1">
+            <button onclick="calculateDensity()">Calculate Density</button>
+            <p class="result" id="densityResult"></p>
+        </div>
+    </div>
+
+    <!-- Experiment 2 -->
+    <div class="experiment">
+        <h2>Experiment 2: Measuring the pH of Common Household Solutions</h2>
+        <div class="calculator">
+            <h3>Determine pH Level</h3>
+            <label for="solutionPH">Enter Measured pH:</label>
+            <input type="number" id="solutionPH" step="0.1">
+            <button onclick="determinePH()">Determine pH Level</button>
+            <p class="result" id="pHResult"></p>
+        </div>
+    </div>
+
+    <!-- Experiment 3 -->
+    <div class="experiment">
+        <h2>Experiment 3: Determining the Boiling Point of Water</h2>
+        <div class="calculator">
+            <h3>Check Boiling Point</h3>
+            <label for="temperature">Enter Measured Temperature (°C):</label>
+            <input type="number" id="temperature" step="0.1">
+            <button onclick="checkBoilingPoint()">Check Boiling Point</button>
+            <p class="result" id="boilingPointResult"></p>
+        </div>
+    </div>
+
+    <!-- Experiment 4 -->
+    <div class="experiment">
+        <h2>Experiment 4: Neutralization Reaction - Acid and Base</h2>
+        <p><strong>Objective:</strong> Determine the amount of base needed to neutralize a given amount of acid.</p>
+        <div class="calculator">
+            <h3>Calculate Required Base</h3>
+            <label for="acidAmount">Enter Acid Amount (mL):</label>
+            <input type="number" id="acidAmount" step="0.1">
+            <label for="acidConcentration">Enter Acid Concentration (M):</label>
+            <input type="number" id="acidConcentration" step="0.1">
+            <label for="baseConcentration">Enter Base Concentration (M):</label>
+            <input type="number" id="baseConcentration" step="0.1">
+            <button onclick="calculateBaseVolume()">Calculate Base Volume</button>
+            <p class="result" id="baseVolumeResult"></p>
+        </div>
+    </div>
+
+    <script>
+        function calculateHardness() {
+            var edtaVolume = parseFloat(document.getElementById('edtaVolume').value);
+            var edtaConcentration = parseFloat(document.getElementById('edtaConcentration').value);
+            var waterSampleVolume = parseFloat(document.getElementById('waterSampleVolume').value);
+
+            if (isNaN(edtaVolume) || isNaN(edtaConcentration) || isNaN(waterSampleVolume) || edtaVolume <= 0 || edtaConcentration <= 0 || waterSampleVolume <= 0) {
+                document.getElementById('result').innerText = "Please enter valid values in all fields.";
+                return;
+            }
+
+            var hardness = (edtaVolume * edtaConcentration * 1000) / waterSampleVolume;
+            document.getElementById('result').innerText = "The total hardness of the water sample is " + hardness.toFixed(2) + " ppm.";
+        }
+
+        function calculateDensity() {
+            const mass = parseFloat(document.getElementById('mass').value);
+            const volume = parseFloat(document.getElementById('volume').value);
+            if (!mass || !volume) {
+                document.getElementById('densityResult').textContent = 'Please enter valid values for mass and volume.';
+                return;
+            }
+            const density = mass / volume;
+            document.getElementById('densityResult').textContent = `Density: ${density.toFixed(2)} g/cm³`;
+        }
+
+        function determinePH() {
+            const pH = parseFloat(document.getElementById('solutionPH').value);
+            if (!pH) {
+                document.getElementById('pHResult').textContent = 'Please enter a valid pH value.';
+                return;
+            }
+            if (pH < 7) {
+                document.getElementById('pHResult').textContent = 'Solution is acidic.';
+            } else if (pH > 7) {
+                document.getElementById('pHResult').textContent = 'Solution is basic.';
+            } else {
+                document.getElementById('pHResult').textContent = 'Solution is neutral.';
+            }
+        }
+
+        function checkBoilingPoint() {
+            const temperature = parseFloat(document.getElementById('temperature').value);
+            if (temperature >= 100) {
+                document.getElementById('boilingPointResult').textContent = 'Water has boiled.';
+            } else {
+                document.getElementById('boilingPointResult').textContent = 'Water has not boiled yet.';
+            }
+        }
+
+        function calculateBaseVolume() {
+            const acidAmount = parseFloat(document.getElementById('acidAmount').value);
+            const acidConcentration = parseFloat(document.getElementById('acidConcentration').value);
+            const baseConcentration = parseFloat(document.getElementById('baseConcentration').value);
+
+            if (!acidAmount || !acidConcentration || !baseConcentration) {
+                document.getElementById('baseVolumeResult').textContent = 'Please enter valid values.';
+                return;
+            }
+
+            const baseVolume = (acidAmount * acidConcentration) / baseConcentration;
+            document.getElementById('baseVolumeResult').textContent = `Required base volume: ${baseVolume.toFixed(2)} mL`;
+        }
+    </script>
+</body>
+</html>
